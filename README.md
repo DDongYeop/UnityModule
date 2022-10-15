@@ -9,7 +9,7 @@
 <br/>
 
 ## 모듈 모음
-  >##### [SoundManager]
+  >##### [SoundManager](https://github.com/DDongYeop/UnityModule2021/tree/main/SoundManager)
 
 
 
@@ -19,4 +19,4 @@
 
 
 
-[DDongYeop]: [https://github.com/DDongYeop] "깃허브로 이동됩니다"
+[DDongYeop]: [https://github.com/DDongYeop] "깃허브로 이동됩니다."
