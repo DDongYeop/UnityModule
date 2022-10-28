@@ -28,23 +28,23 @@ public class ViedeoOption : MonoBehaviour
         _resolutions.AddRange(Screen.resolutions);
         _resolutionDropdown.options.Clear();
 
-        // int optionNum = 0;
-
         foreach (Resolution item in _resolutions)
         {
             TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData();
             option.text = item.width + "x" + item.height;
             _resolutionDropdown.options.Add(option);
-
-            // if (item.width == Screen.width && item.height == Screen.height)
-            //     _resolutionDropdown.value = optionNum;
         }
 
         _resolutionDropdown.RefreshShownValue();
 
-        _resolutionNum = _resolutions.Count - 1;
-        _resolutionDropdown.value = _resolutionNum;
-        _fullscreenBTN.isOn = true;
+        if (!PlayerPrefs.HasKey("IsFirst"))
+        {
+            _resolutionNum = _resolutions.Count - 1;
+            _resolutionDropdown.value = _resolutionNum;
+            _fullscreenBTN.isOn = true;
+
+            PlayerPrefs.SetInt("IsFirst", 1);
+        }
 
         OkBtnClick();
     }
