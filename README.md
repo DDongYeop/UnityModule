@@ -9,8 +9,8 @@
 <br/>
 
 ## 모듈 모음
-  >##### [SoundManager](https://github.com/DDongYeop/UnityModule2021/tree/main/SoundManager)
-
+  >##### [SoundManager]
+  >##### [ResolutionManager]
 
 
 
@@ -20,3 +20,5 @@
 
 
 [DDongYeop]: https://github.com/DDongYeop "깃허브로 이동됩니다"
+[SoundManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/SoundManager
+[ResolutionManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/ResolutionManager
