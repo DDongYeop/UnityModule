@@ -9,6 +9,7 @@ public class ViedeoOption : MonoBehaviour
     private FullScreenMode _screenMode;
     private TMP_Dropdown _resolutionDropdown;
     private Toggle _fullscreenBTN;
+    private TMP_Dropdown _dropdown;
     private List<Resolution> _resolutions = new List<Resolution>();
     private int _resolutionNum;
 
@@ -16,6 +17,7 @@ public class ViedeoOption : MonoBehaviour
     {
         _resolutionDropdown = GetComponentInChildren<TMP_Dropdown>();
         _fullscreenBTN = GetComponentInChildren<Toggle>();
+        _dropdown = transform.GetChild(0).GetComponent<TMP_Dropdown>();
     }
 
     private void Start() 
@@ -31,27 +33,33 @@ public class ViedeoOption : MonoBehaviour
         foreach (Resolution item in _resolutions)
         {
             TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData();
-            option.text = item.width + "x" + item.height;
+            option.text = item.width + " X " + item.height;
             _resolutionDropdown.options.Add(option);
         }
 
         _resolutionDropdown.RefreshShownValue();
 
-        if (!PlayerPrefs.HasKey("IsFirst"))
+        if (!PlayerPrefs.HasKey("resolutionNum"))
         {
-            _resolutionNum = _resolutions.Count - 1;
-            _resolutionDropdown.value = _resolutionNum;
+            PlayerPrefs.SetInt("resolutionNum", _resolutions.Count - 1);
+            PlayerPrefs.SetInt("FullScreen", 1);
             _fullscreenBTN.isOn = true;
-
-            PlayerPrefs.SetInt("IsFirst", 1);
         }
 
+        if (PlayerPrefs.GetInt("FullScreen") == 1)
+            _screenMode = FullScreenMode.FullScreenWindow;
+        else if (PlayerPrefs.GetInt("FullScreen") == 0)
+            _screenMode = FullScreenMode.Windowed;
+
+        _resolutionNum = PlayerPrefs.GetInt("resolutionNum");
+        _dropdown.value = _resolutionNum;
         OkBtnClick();
     }
 
     public void DropboxOptionChange(int x)
     {
         _resolutionNum = x;
+        PlayerPrefs.SetInt("resolutionNum", x);
 
         OkBtnClick();
     }
@@ -59,9 +67,15 @@ public class ViedeoOption : MonoBehaviour
     public void FullScreen(bool isFull)
     {
         if (isFull)
+        {
             _screenMode = FullScreenMode.FullScreenWindow;
+            PlayerPrefs.SetInt("FullScreen", 1);
+        }
         else
+        {
             _screenMode = FullScreenMode.Windowed;
+            PlayerPrefs.SetInt("FullScreen", 0);
+        }
 
         OkBtnClick();
     }
