@@ -21,6 +21,7 @@
 
 
 [DDongYeop]: https://github.com/DDongYeop "깃허브로 이동됩니다"
-[SoundManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/SoundManager
-[ResolutionManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/ResolutionManager
-[FADE_InOut]: https://github.com/DDongYeop/UnityModule2021/tree/main/FADE_InOut
+[SoundManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/SoundManager "깃허브로 이동됩니다"
+[ResolutionManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/ResolutionManager "깃허브로 이동됩니다"
+[FADE_InOut]: https://github.com/DDongYeop/UnityModule2021/tree/main/FADE_InOut "깃허브로 이동됩니다"
+[LottoManager]: https://github.com/DDongYeop/UnityModule2021/tree/main/LottoManager "깃허브로 이동됩니다"
